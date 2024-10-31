@@ -1,0 +1,15 @@
+module load fastqc
+mkdir fastq
+mv  WTA2_1.fq.gz fastq
+mv  WTA2_2.fq.gz fastq
+ls -l fastq
+fastqc fastq/*
+ls -l
+clear
+ls -l fastq
+pwd
+ls -l fastq
+pwd
+cd fastq
+pwd
+exit
