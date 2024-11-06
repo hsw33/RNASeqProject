@@ -1,0 +1,17 @@
+Loading bowtie2/2.5.3
+  Loading requirement: bcftools/1.20 samtools/1.20
+21012870 reads; of these:
+  21012870 (100.00%) were paired; of these:
+    898394 (4.28%) aligned concordantly 0 times
+    18597887 (88.51%) aligned concordantly exactly 1 time
+    1516589 (7.22%) aligned concordantly >1 times
+    ----
+    898394 pairs aligned concordantly 0 times; of these:
+      374946 (41.74%) aligned discordantly 1 time
+    ----
+    523448 pairs aligned 0 times concordantly or discordantly; of these:
+      1046896 mates make up the pairs; of these:
+        652578 (62.33%) aligned 0 times
+        329768 (31.50%) aligned exactly 1 time
+        64550 (6.17%) aligned >1 times
+98.45% overall alignment rate
