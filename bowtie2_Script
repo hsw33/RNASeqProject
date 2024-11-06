@@ -1,0 +1,21 @@
+#!/bin/bash
+#SBATCH --job-name=EC-12_files --output=z01.%x
+#SBATCH --mail-type=END,FAIL --mail-user=hsw33@georgetown.edu
+#SBATCH --nodes=1 --ntasks=1 --cpus-per-task=1 --time=72:00:00
+#SBATCH --mem=4G
+
+# Load required modules (adjust based on your HPC system)
+module load bowtie2/2.5.3    
+
+# Define your reference genome index
+REFERENCE_GENOME="/home/hsw33/reference_genome_index"
+
+# Define input read files (adjust to your input file paths)
+READ1="/home/hsw33/output_WTA2_1_pairedend_SC1.fq.gz"
+READ2="/home/hsw33/output_WTA2_2_pairedend_SC1.fq.gz"
+
+# Define output file for the alignment in SAM format
+OUTPUT="/home/hsw33/WTA2.sam"
+
+# Run Bowtie2
+bowtie2 -x $REFERENCE_GENOME -1 $READ1 -2 $READ2 -S $OUTPUT
