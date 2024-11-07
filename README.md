@@ -1,4 +1,4 @@
-# RNASeqProjectWTA2
+# RNASeqProject
 This project is using C. albicans genomic data to learn more and practice bioinformatics.
 The workflow of this project is as follows:
 1. Run fastqc on the initial data to assess its quality
