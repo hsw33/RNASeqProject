@@ -5,6 +5,7 @@ This project is using C. albicans genomic data to learn more and practice bioinf
 Run fastqc on the initial data to assess its quality
 ## Trimmomatic cleaning
 Based on raw fastqc results, determine optimal Trimmomatic parameters (as specified in the Trimmomatic SBATCH script file) and run Trimmomatic on the raw data
+https://docs.google.com/spreadsheets/d/1AOa-XaTzR_PKMIRQDmu8oDTmawXXnkIwEjKOQkNC7Vs/edit?usp=sharing
 ## Analysis with FastQC
 Use fastqc to assess the cleaned results. Once the cleaned results are deemed high-quality, use bowtie2 to align the data with the C. albicans reference genome
 ## Use bowtie2
