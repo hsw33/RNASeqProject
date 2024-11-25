@@ -1,6 +1,9 @@
 # RNASeqProject
-This project is using C. albicans genomic data to learn more and practice bioinformatics.
-# The workflow of this project is as follows:
+## Project summary
+Using C. albicans data, courtesy of Professor Ronda Rolfes at Georgetown University, this project aims to elucidate the genomic differences of of C. albicans grown in the presence and absence of thiamine treatment. C. albicans is a yeast species that is responsible for causing urinary tract and other genital infections, and transmission is especially common in hospital settings, where patients are, unfortunately, already susceptible to infection due to weakened immune system.
+## Files used
+My particular analysis was performed on two files, WTA2_1.fq.gz, WTA2_2.fq.gz. These files contain the genomic data from one isolate of C. albicans. The A2 designation means that the strain was grown in the presence of of thiamine. The 1 and 2 designations in the file title represent the read pairs. 
+# Project workflow:
 ## FastQC
 Run fastqc on the initial data to assess its quality
 ## Trimmomatic cleaning
