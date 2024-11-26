@@ -17,3 +17,5 @@ Assess bowtie2 results. The bowtie2 results yielded an alignment of 88.51% (of a
 Need to add more explanation here
 ## Use conda environment and run HTSeq on the bam index file
 Need to add more explanation here
+## Use RStudio to conduct biological analysis
+Using RStudio and a script available on this page, I ran analysis to extract pertinent biological information. Specifically, I obtained a table that identified 13 genes that are differentially expressed in thiamine-present vs absent C. albicans isolates.
