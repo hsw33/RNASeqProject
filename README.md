@@ -1,18 +1,19 @@
 # RNASeqProject
 ## Project summary
-Using C. albicans data, courtesy of Professor Ronda Rolfes at Georgetown University, this project aims to elucidate the genomic differences of of C. albicans grown in the presence and absence of thiamine treatment. C. albicans is a yeast species that is responsible for causing urinary tract and other genital infections, and transmission is especially common in hospital settings, where patients are, unfortunately, already susceptible to infection due to weakened immune system.
+Using C. albicans data, courtesy of Professor Ronda Rolfes at Georgetown University, this project aims to elucidate the genomic differences of of C. albicans grown in the presence and absence of thiamine treatment. C. albicans is a yeast species responsible for causing urinary tract and other genital infections, and transmission is especially common in hospital settings, where patients are, unfortunately, already susceptible to infection due to weakened immune systems.
 ## Files used
-My particular analysis was performed on two files, WTA2_1.fq.gz, WTA2_2.fq.gz. These files contain the genomic data from one isolate of C. albicans. The A2 designation means that the strain was grown in the presence of of thiamine. The 1 and 2 designations in the file title represent the read pairs. 
+My particular analysis was performed on two files, WTA2_1.fq.gz, WTA2_2.fq.gz. These files contain the genomic data from one isolate of C. albicans. The A2 designation means that the strain was grown in the presence of thiamine. The 1 and 2 designations in the file title represent the read pairs. These file names will be important to keep track of, as they're how I designated the data that I worked on throughout this project.
 # Project workflow:
 ## FastQC
-Run fastqc on the initial data to assess its quality
+I ran FastQC on the initial data to assess its quality. By looking at the initial graphical output on FastQC, it was clear that the data needed to be cleaned up to maximize its quality because several of the reported values were in the "yellow" or "red" zone, suggesting medium-to-poor quality data.
 ## Trimmomatic cleaning
-Based on raw fastqc results, determine optimal Trimmomatic parameters (as specified in the Trimmomatic SBATCH script file) and run Trimmomatic on the raw data
+Based on raw FastQC results, I determined optimal Trimmomatic parameters (as specified in the Trimmomatic SBATCH script file) and ran Trimmomatic on the raw data. The following spreadsheet was used to record data quality scores before and after cleaning.
 https://docs.google.com/spreadsheets/d/1AOa-XaTzR_PKMIRQDmu8oDTmawXXnkIwEjKOQkNC7Vs/edit?usp=sharing
 ## Analysis with FastQC
-Use fastqc to assess the cleaned results. Once the cleaned results are deemed high-quality, use bowtie2 to align the data with the C. albicans reference genome
+Then, I used FastQC to assess the cleaned results. The parameters used in Trimmomatic were successful in increasing the overall quality of the data. After I deemed the results to be high-quality, I used bowtie2 to align the data with the C. albicans reference genome, which is linked below.
+https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000182965.3/
 ## Use bowtie2
-Assess bowtie2 results. The bowtie2 results yielded an alignment of 88.51% (of alignments that occurred exactly one time). At this stage in the process, my results were slightly different from Grace's results, who is also examining the same WTA2_1 and WTA2_2 files. 
+I then used bowtie2 to align my experimental genome with the reference genome. After running the program, the bowtie2 results yielded an alignment of 88.51% (of alignments that occurred exactly one time). At this stage in the process, my results were slightly different from Grace's results, who is also examining the same WTA2_1 and WTA2_2 files. This is of importance because we should have exactly identical results. This discrepancy may be due to a small difference in our Trimmomatic scripts, like the order in which we invoked the trimming commands.
 ## Use samtools and bamtools
 Need to add more explanation here
 ## Use conda environment and run HTSeq on the bam index file
