@@ -9,6 +9,7 @@ I ran FastQC on the initial data to assess its quality. By looking at the initia
 ## Trimmomatic cleaning
 Based on raw FastQC results, I determined optimal Trimmomatic parameters (as specified in the Trimmomatic SBATCH script file) and ran Trimmomatic on the raw data. The following spreadsheet was used to record data quality scores before and after cleaning.
 https://docs.google.com/spreadsheets/d/1AOa-XaTzR_PKMIRQDmu8oDTmawXXnkIwEjKOQkNC7Vs/edit?usp=sharing
+See: Trimmomatic_Script
 ## Analysis with FastQC
 Then, I used FastQC to assess the cleaned results. The parameters used in Trimmomatic were successful in increasing the overall quality of the data. After I deemed the results to be high-quality, I used bowtie2 to align the data with the C. albicans reference genome, which is linked below.
 https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000182965.3/
