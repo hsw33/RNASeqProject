@@ -4,8 +4,8 @@ Using C. albicans data, courtesy of Professor Ronda Rolfes at Georgetown Univers
 ## Files used
 My particular analysis was performed on two files, WTA2_1.fq.gz, WTA2_2.fq.gz. These files contain the genomic data from one isolate of C. albicans. The A2 designation means that the strain was grown in the presence of thiamine. The 1 and 2 designations in the file title represent the read pairs. These file names will be important to keep track of, as they're how I designated the data that I worked on throughout this project.
 ## Experimental design
-In the Rolfes Lab at Georgetown University, researchers grew C. albicans replicates in the presence and absence of thiamine, a critical B vitamin for the species. We used 12 data files, but I individually conducted analysis on two of the 12 files, WTA2_1.fq.gz, WTA2_2.fq.gz. The _1 and _2 designations represent the forward and reverse reads. 
-### Data files:
+In the Rolfes Lab at Georgetown University, researchers grew C. albicans replicates in the presence and absence of thiamine, a critical B vitamin for the species. We used 12 data files, but I individually conducted analysis on two of the 12 files, WTA2_1.fq.gz, WTA2_2.fq.gz. The "_1" and "_2" designations represent the forward and reverse reads, while the WTA1/B1/C1 designation indicates that the replicates were grown in the presence of thiamine, WTA2/B2/C2 replicates were grown in the absence of thiamine.
+### Data files used:
 #### Grown in the presence of thiamine
 WTA1_1.fq.gz, WTA1_2.fq.gz
 
