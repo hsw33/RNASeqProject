@@ -30,7 +30,9 @@ https://docs.google.com/spreadsheets/d/1AOa-XaTzR_PKMIRQDmu8oDTmawXXnkIwEjKOQkNC
 
 See: Scripts/Trimmomatic_Script
 ## Analysis with FastQC
-Then, I used FastQC to assess the cleaned results. The parameters used in Trimmomatic were successful in increasing the overall quality of the data. After I deemed the results to be high-quality, I used bowtie2 to align the data with the C. albicans reference genome, which is linked below.
+Then, I used FastQC to assess the cleaned results. The parameters used in Trimmomatic were successful in increasing the overall quality of the data. 95.63% of the reads were retained after cleaning, which is an excellent result. 
+
+After I deemed the output to be high-quality, I used bowtie2 to align the data with the C. albicans reference genome, which is linked below.
 https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000182965.3/
 ## Use bowtie2
 I then used bowtie2 to align my experimental reads with the reference genome. After running the program, the bowtie2 results yielded an alignment of 88.51% (of alignments that occurred exactly one time). At this stage in the process, my results were slightly different from Grace's results, who is also examining the same WTA2_1 and WTA2_2 files. This is of importance because we should have exactly identical results. This discrepancy may be due to a small difference in our Trimmomatic scripts, like the order in which we invoked the trimming commands.
@@ -74,7 +76,9 @@ $ conda activate htseq
 $ conda install -c bioconda htseq
 
 ## Use RStudio and DESeq2 to conduct biological analysis
-After the output from HTSeq was available, I downloaded the files onto my desktop computer. Using RStudio, the R package DESeq2, and a script available on this page, I ran an analysis on the output files from HTSeq to extract pertinent biological information. Specifically, I obtained a table that identified 13 genes that are differentially expressed in thiamine-present vs absent C. albicans isolates. DESeq2 was able to identify the differential expression of genes between the transcriptome. There were only 13 genes that were significantly differentially expressed, and this data was consolidated into a table, as well as into a principle component analysis plot and a volcano plot.
+After the output from HTSeq was available, I downloaded the files onto my desktop computer. Using RStudio, the R package DESeq2, and a script available on this page, I ran an analysis on the output files from HTSeq to extract pertinent biological information. Specifically, I obtained a table that identified 13 genes that are differentially expressed in thiamine-present vs absent C. albicans isolates. DESeq2 was able to identify the differential expression of genes between the transcriptome. There were only 13 genes that were significantly differentially expressed, and this data was consolidated into a table, as well as a volcano plot. Information about the transcriptome as a whole was charted in the Principle Components Analysis (PCA) plot. 
+
+All of this data is available in the folder titled "RStudioData." 
 ## Interpretation of data
 The output from DESeq2 returned 13 genes that were significantly differentially expressed. Using a file on the HPC that had specific annotations for each gene of significance, I used the following command:
 
