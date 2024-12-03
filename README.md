@@ -6,14 +6,14 @@ My particular analysis was performed on two files, WTA2_1.fq.gz, WTA2_2.fq.gz. T
 ## Experimental design
 In the Rolfes Lab at Georgetown University, researchers grew C. albicans replicates in the presence and absence of thiamine, a critical B vitamin for the species. We used 12 data files, but I individually conducted analysis on two of the 12 files, WTA2_1.fq.gz, WTA2_2.fq.gz. The "_1" and "_2" designations represent the forward and reverse reads, while the WTA1/B1/C1 designation indicates that the replicates were grown in the presence of thiamine, WTA2/B2/C2 replicates were grown in the absence of thiamine.
 ### Data files used:
-#### Grown in the presence of thiamine
+#### Grown in the presence of thiamine:
 WTA1_1.fq.gz, WTA1_2.fq.gz
 
 WTB1_1.fq.gz, WTB1_2.fq.gz
 
 WTC1_1.fq.gz, WTC1_2.fq.gz
 
-#### Grown in the absence of thiamine
+#### Grown in the absence of thiamine:
 WTA2_1.fq.gz, WTA2_2.fq.gz
 
 WTB2_1.fq.gz, WTB2_2.fq.gz
@@ -38,6 +38,21 @@ I then used bowtie2 to align my experimental reads with the reference genome. Af
 See: Scripts/bowtie2_Script
 ## Use samtools and bamtools
 The output of running bowtie2 on the data was a file with the extension .sam. SAM files are extremely large files that would be too cumbersome to interpret, so I converted the .sam file to a .bam file. The bam file is not human-readable because it is written in binary code, but its size is significantly reduced so I was able to use it as an input file for further analysis. At this point, I also had to create a .bam index file, which is a sorted and indexed version of our .bam file.
+### Code to convert from .sam to .bam & to index the .bam file
+$srun -- pty bash
+$ module load samtools
+#### Convert sam -> bam:
+$samtools view -S -b sample.sam > sample.bam
+#### View to visualize alignments and header:
+$ samtools view sample.bam|more 
+$ samtools view –H sample.bam|more
+#### Count number of alignments
+$ samtools view sample.bam|wc –l
+#### Sort
+$ samtools sort sample.bam –o sample.srt.bam
+#### Index
+$samtools index sample.srt.bam (output file is .bam.bai)
+
 ## Use conda environment and run HTSeq on the bam index file
 After setting up the conda environment, I utilized the program HTSeq. Then, I wrote an HTSeq SBATCH script as the analysis took several hours to run. HTSeq quantified the read counts of the alignment between the experimental genome and the reference genome.
 
