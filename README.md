@@ -41,6 +41,7 @@ See: Scripts/bowtie2_Script
 ## Use samtools and bamtools
 The output of running bowtie2 on the data was a file with the extension .sam. SAM files are extremely large files that would be too cumbersome to interpret, so I converted the .sam file to a .bam file. The bam file is not human-readable because it is written in binary code, but its size is significantly reduced so I was able to use it as an input file for further analysis. At this point, I also had to create a .bam index file, which is a sorted and indexed version of our .bam file.
 ### Code to convert from .sam to .bam & to index the .bam file:
+#### Load samtools
 $ srun --pty bash
 $ module load samtools
 #### Convert sam -> bam:
