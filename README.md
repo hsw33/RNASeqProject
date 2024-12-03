@@ -7,7 +7,9 @@ My particular analysis was performed on two files, WTA2_1.fq.gz, WTA2_2.fq.gz. T
 ## FastQC
 I ran FastQC on the initial data to assess its quality. By looking at the initial graphical output on FastQC, it was clear that the data needed to be cleaned up to maximize its quality because several of the reported values were in the "yellow" or "red" zone, suggesting medium-to-poor quality data.
 ## Trimmomatic cleaning
-Based on raw FastQC results, I determined optimal Trimmomatic parameters (as specified in the Trimmomatic SBATCH script file) and ran Trimmomatic on the raw data. The following spreadsheet was used to record data quality scores before and after cleaning.
+Based on raw FastQC results, I determined optimal Trimmomatic parameters (as specified in the Trimmomatic SBATCH script file) and ran Trimmomatic on the raw data. In particular, there was concern about the per base sequence content, so we used the HEADCROP command to improve that metric, in particular.
+
+The following spreadsheet was used to record data quality scores before and after cleaning.
 https://docs.google.com/spreadsheets/d/1AOa-XaTzR_PKMIRQDmu8oDTmawXXnkIwEjKOQkNC7Vs/edit?usp=sharing
 
 See: Scripts/Trimmomatic_Script
