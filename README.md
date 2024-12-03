@@ -3,6 +3,22 @@
 Using C. albicans data, courtesy of Professor Ronda Rolfes at Georgetown University, this project aims to elucidate the genomic differences of of C. albicans grown in the presence and absence of thiamine treatment. C. albicans is a yeast species responsible for causing urinary tract and other genital infections, and transmission is especially common in hospital settings, where patients are, unfortunately, already susceptible to infection due to weakened immune systems.
 ## Files used
 My particular analysis was performed on two files, WTA2_1.fq.gz, WTA2_2.fq.gz. These files contain the genomic data from one isolate of C. albicans. The A2 designation means that the strain was grown in the presence of thiamine. The 1 and 2 designations in the file title represent the read pairs. These file names will be important to keep track of, as they're how I designated the data that I worked on throughout this project.
+## Experimental design
+In the Rolfes Lab at Georgetown University, researchers grew C. albicans replicates in the presence and absence of thiamine, a critical B vitamin for the species. We used 12 data files, but I individually conducted analysis on two of the 12 files, WTA2_1.fq.gz, WTA2_2.fq.gz. The _1 and _2 designations represent the forward and reverse reads. 
+### Data files:
+#### Grown in the presence of thiamine
+WTA1_1.fq.gz, WTA1_2.fq.gz
+
+WTB1_1.fq.gz, WTB1_2.fq.gz
+
+WTC1_1.fq.gz, WTC1_2.fq.gz
+
+#### Grown in the absence of thiamine
+WTA2_1.fq.gz, WTA2_2.fq.gz
+
+WTB2_1.fq.gz, WTB2_2.fq.gz
+
+WTC2_1.fq.gz, WTC2_2.fq.gz
 # Project workflow:
 ## FastQC
 I ran FastQC on the initial data to assess its quality. By looking at the initial graphical output on FastQC, it was clear that the data needed to be cleaned up to maximize its quality because several of the reported values were in the "yellow" or "red" zone, suggesting medium-to-poor quality data.
@@ -23,9 +39,25 @@ See: Scripts/bowtie2_Script
 ## Use samtools and bamtools
 The output of running bowtie2 on the data was a file with the extension .sam. SAM files are extremely large files that would be too cumbersome to interpret, so I converted the .sam file to a .bam file. The bam file is not human-readable because it is written in binary code, but its size is significantly reduced so I was able to use it as an input file for further analysis. At this point, I also had to create a .bam index file, which is a sorted and indexed version of our .bam file.
 ## Use conda environment and run HTSeq on the bam index file
-Using the conda environment, I set up HTSeq. Then, I wrote an HTSeq SBATCH script as the analysis took several hours to run. HTSeq quantified the read counts of the alignment between the experimental genome and the reference genome.
+After setting up the conda environment, I utilized the program HTSeq. Then, I wrote an HTSeq SBATCH script as the analysis took several hours to run. HTSeq quantified the read counts of the alignment between the experimental genome and the reference genome.
 
 See: Scripts/HTSeq Script
+
+### Code to set up the Conda environment:
+$ module load anaconda3
+
+$ conda create --[name] htseq
+
+$ conda init
+
+(restart shell by logging off HPC, log back on)
+
+$ module load anaconda3
+
+$ conda activate htseq
+
+$ conda install -c bioconda htseq
+
 ## Use RStudio and DESeq2 to conduct biological analysis
 After the output from HTSeq was available, I downloaded the files onto my desktop computer. Using RStudio, the R package DESeq2, and a script available on this page, I ran an analysis on the output files from HTSeq to extract pertinent biological information. Specifically, I obtained a table that identified 13 genes that are differentially expressed in thiamine-present vs absent C. albicans isolates. DESeq2 was able to identify the differential expression of genes between the transcriptome. There were only 13 genes that were significantly differentially expressed, and this data was consolidated into a table, as well as into a principle component analysis plot and a volcano plot.
 ## Interpretation of data
