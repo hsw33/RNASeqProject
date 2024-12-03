@@ -1,0 +1,26 @@
+#!/bin/bash
+#SBATCH --job-name=htseq_count --output=z01.%x
+#SBATCH --mail-type=END,FAIL --mail-user=hsw33@georgetown.edu
+#SBATCH --nodes=1 --ntasks=1 --cpus-per-task=1 --time=72:00:00
+#SBATCH --mem=4G
+
+
+#-----activate htseq----#s
+
+source activate htseq
+
+#-----set variables---------#
+
+# where to find specific algorithm/module (htseq)
+htseq=/home/hsw33/.conda/envs/htseq/bin/htseq-count
+
+#input BAM file
+bam=/home/hsw33/WTA2.srt.bam
+
+#output file
+output=/home/hsw33/WTA2_htseqCount.txt
+
+# reference GTF file
+refGTF=/home/hsw33/GCF_000182965.3_ASM18296v3_genomic.gtf
+
+${htseq} -f bam -s no -r pos -i gene_id ${bam} ${refGTF} > ${output}
