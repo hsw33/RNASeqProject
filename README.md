@@ -24,3 +24,9 @@ The output of running bowtie2 on the data was a file with the extension .sam. SA
 Using the conda environment, I set up HTSeq. Then, I wrote an HTSeq SBATCH script as the analysis took several hours to run. HTSeq quantified the read counts of the alignment between the experimental genome and the reference genome.
 ## Use RStudio and DESeq2 to conduct biological analysis
 After the output from HTSeq was available, I downloaded the files onto my desktop computer. Using RStudio, DESeq2, and a script available on this page, I ran an analysis on the output files from HTSeq to extract pertinent biological information. Specifically, I obtained a table that identified 13 genes that are differentially expressed in thiamine-present vs absent C. albicans isolates. DESeq2 was able to identify the differential expression of genes between the two genomes. There were only 13 genes that were differentially expressed, and this data was consolidated into a table, as well as into a principle component analysis plot and a Volcano plot.
+## Interpretation of data
+The output from DESeq2 returned 13 genes that were significantly differentially expressed. Using a file on the HPC that had specific annotations for each gene of significance, I used the following command:
+
+grep -wFf signifcant_geneIDs GCF_000182965.3_ASM18296v3_genomic.gtf | grep "protein_coding" | cut -f9| cut -d ";" -f1,3,5 > signif_gene_annotation_info
+
+This command generated a text file that I input into my spreadsheet containing information on the 13 significant genes. The gene names and gene IDs were now accessible in this Excel file (link file here) and I began to research the role of these genes in C. albicans.
