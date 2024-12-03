@@ -29,4 +29,4 @@ The output from DESeq2 returned 13 genes that were significantly differentially 
 
 grep -wFf signifcant_geneIDs GCF_000182965.3_ASM18296v3_genomic.gtf | grep "protein_coding" | cut -f9| cut -d ";" -f1,3,5 > signif_gene_annotation_info
 
-This command generated a text file that I input into my spreadsheet containing information on the 13 significant genes. The gene names and gene IDs were now accessible in this Excel file (link file here) and I began to research the role of these genes in C. albicans.
+This command generated a text file that I input into my spreadsheet containing information on the 13 significant genes. The gene names and gene IDs were now accessible in this Excel file (RStudioData/Updated Biological Functions of Signif_TH-vTH+.xlsx) and I began to research the role of these genes in C. albicans.
