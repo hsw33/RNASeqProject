@@ -78,7 +78,7 @@ $ conda install -c bioconda htseq
 ## Use RStudio and DESeq2 to conduct biological analysis
 After the output from HTSeq was available, I downloaded the files onto my desktop computer. Using RStudio, the R package DESeq2, and a script available on this page, I ran an analysis on the output files from HTSeq to extract pertinent biological information. Specifically, I obtained a table that identified 13 genes that are differentially expressed in thiamine-present vs absent C. albicans isolates. DESeq2 was able to identify the differential expression of genes between the transcriptome. There were only 13 genes that were significantly differentially expressed, and this data was consolidated into a table, as well as a volcano plot. Information about the transcriptome as a whole was charted in the Principle Components Analysis (PCA) plot. 
 
-All of this data is available in the folder titled "RStudioData." 
+All of this data is available in the [RStudioData](https://github.com/hsw33/RNASeqProject/tree/main/RStudioData) folder. 
 ## Interpretation of data
 We used multiple programs and resources to make sense of our data and interpret its biological relevance.
 
