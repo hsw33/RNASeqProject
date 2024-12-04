@@ -89,9 +89,10 @@ grep -wFf signifcant_geneIDs GCF_000182965.3_ASM18296v3_genomic.gtf | grep "prot
 
 This command generated a text file that I input into my spreadsheet containing information on the 13 significant genes. The gene names and gene IDs were now accessible in this Excel file (RStudioData/Updated Biological Functions of Signif_TH-vTH+.xlsx) and I began to research the role of these genes in C. albicans.
 
-### DESeq2 Interpretation
+### DESeq2 interpretation with gene function investigation
 DESeq2 identified 13 genes that were significantly differentially expressed in the thiamine-absent condition. Using the Candida Genome Database (http://www.candidagenome.org/) and UniProt (https://www.uniprot.org/) I researched the proposed function of each gene. Based on my research, many of the differentially expressed genes were involved in thiamine biosynthesis, transmembrane transport, and biofilm synthesis. Of these 13 genes, 4 coded for uncharacterized proteins, and it was more challenging to elucidate their function.
 
 Considering the remaining 9 genes that coded for identifiable proteins, I expected to see upregulation of genes involved in pathways related to thiamine synthesis. Thiamine is an essential vitamin for an organism, and in its environmental absence, the organism is expected to make its own thiamine in order to survive. This trait is evolutionarily advantageous, thus, it is not surprising that C. albicans can synthesize their own thiamine. The upregulation of genes involved in transmembrane transport is also consistent with mechanisms the organism would employ to sustain its life. It is energetically advantageous for cells to consume as much material as they can from their environment, rather than synthesize it from scratch. As such, I would expect to see the cell increase its rate of transmembrane transport in order to be energetically efficient. 
 
+### Gene ontology analysis
 
