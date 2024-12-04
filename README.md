@@ -31,8 +31,8 @@ See: [Trimmomatic Script](https://github.com/hsw33/RNASeqProject/blob/main/Scrip
 ## Analysis with FastQC
 Then, I used FastQC to assess the cleaned results. The parameters used in Trimmomatic were successful in increasing the overall quality of the data. 95.63% of the reads were retained after cleaning, which is an excellent result. 
 
-After I deemed the output to be high-quality, I used bowtie2 to align the data with the C. albicans reference genome, which is linked below.
-https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000182965.3/
+After I deemed the output to be high-quality, I used bowtie2 to align the data with the C. albicans reference genome, linked [here](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000182965.3/).
+
 ## Use bowtie2
 I then used bowtie2 to align my experimental reads with the reference genome. After running the program, the bowtie2 results yielded an alignment of 88.51% (of alignments that occurred exactly one time). At this stage in the process, my results were slightly different from Grace's results, who is also examining the same WTA2_1 and WTA2_2 files. This is of importance because we should have exactly identical results. This discrepancy may be due to a small difference in our Trimmomatic scripts, like the order in which we invoked the trimming commands.
 
