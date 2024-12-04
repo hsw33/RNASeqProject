@@ -58,7 +58,7 @@ $samtools index sample.srt.bam (output file is .bam.bai)
 ## Use conda environment and run HTSeq on the bam index file:
 After setting up the conda environment, I utilized the program HTSeq. Then, I wrote an HTSeq SBATCH script as the analysis took several hours to run. HTSeq quantified the read counts of the alignment between the experimental genome and the reference genome.
 
-See: Scripts/HTSeq Script
+See: [HTSeq Script](https://github.com/hsw33/RNASeqProject/blob/main/Scripts/HTSeq_Script)
 
 ### Code to set up the Conda environment:
 $ module load anaconda3
@@ -80,7 +80,7 @@ After the output from HTSeq was available, I downloaded the files onto my deskto
 
 All of this data is available in the folder titled "RStudioData." 
 ## Interpretation of data
-We used mulitple programs and resources to make sense of our data and interpret its biological relevance.
+We used multiple programs and resources to make sense of our data and interpret its biological relevance.
 
 The output from DESeq2 returned 13 genes that were significantly differentially expressed. Using a file on the HPC that had specific annotations for each gene of significance, I used the following command:
 
@@ -89,7 +89,7 @@ grep -wFf signifcant_geneIDs GCF_000182965.3_ASM18296v3_genomic.gtf | grep "prot
 This command generated a text file that I input into my spreadsheet containing information on the 13 significant genes. The gene names and gene IDs were now accessible in this Excel file (RStudioData/Updated Biological Functions of Signif_TH-vTH+.xlsx) and I began to research the role of these genes in C. albicans.
 
 ### DESeq2 interpretation with gene function investigation
-DESeq2 identified 13 genes that were significantly differentially expressed in the thiamine-absent condition. Using the Candida Genome Database (http://www.candidagenome.org/) and UniProt (https://www.uniprot.org/) I researched the proposed function of each gene. Based on my research, many of the differentially expressed genes were involved in thiamine biosynthesis, transmembrane transport, and biofilm synthesis. Of these 13 genes, 4 coded for uncharacterized proteins, and it was more challenging to elucidate their function.
+DESeq2 identified 13 genes that were significantly differentially expressed in the thiamine-absent condition. Using the [Candida Genome Database](http://www.candidagenome.org/) and [UniProt](https://www.uniprot.org/) I researched the proposed function of each gene. Based on my research, many of the differentially expressed genes were involved in thiamine biosynthesis, transmembrane transport, and biofilm synthesis. Of these 13 genes, 4 coded for uncharacterized proteins, and it was more challenging to elucidate their function.
 
 Considering the remaining 9 genes that coded for identifiable proteins, I expected to see upregulation of genes involved in pathways related to thiamine synthesis. Thiamine is an essential vitamin for an organism, and in its environmental absence, the organism is expected to make its own thiamine in order to survive. This trait is evolutionarily advantageous, thus, it is not surprising that C. albicans can synthesize their own thiamine. The upregulation of genes involved in transmembrane transport is also consistent with mechanisms the organism would employ to sustain its life. It is energetically advantageous for cells to consume as much material as they can from their environment, rather than synthesize it from scratch. As such, I would expect to see the cell increase its rate of transmembrane transport in order to be energetically efficient. 
 
