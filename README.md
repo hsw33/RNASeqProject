@@ -101,4 +101,5 @@ The upregulation of genes involved in transmembrane transport is also consistent
 Lastly, some of these genes were associated with the production of spider biofilm. While this result was not as straightforward as the others, with some more investigation, it became clear that the production of biofilm allows *C. albicans* to create colonies supported by cellular adhesion and aid in the multiplication and reproduction of cells. Thus, the production of biofilm is another evolutionarily advantageous strategy for the species. 
 
 ### Gene ontology analysis
+As the last step of this project, I used Gene Ontology (GO) and PANTHER software to further interrogate my data. Specifically, the goal of this step was to determine if there more genes with the same GO classification than expected by chance (i.e., by random sampling of genes in genome). *C. albicans* has 6,035 genes, and genome-wide frequency is calculated by dividing the number genes in GO category in genome by the total number of genes in the genome. In this case, that number is 6,035.
 
