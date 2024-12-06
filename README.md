@@ -1,4 +1,5 @@
 # RNA Sequencing Project for BIOL 3615 with Prof. Peter Armbruster
+### October - December 2024
 ## Project summary
 Using *C. albicans* data, courtesy of Professor Ronda Rolfes at Georgetown University, this project aims to elucidate the differential expression of genes in *C. albicans* replicates grown in the presence and absence of thiamine treatment. *C. albicans* is a yeast species responsible for  urinary tract and other genital infections, and transmission is especially common in hospital settings, where patients are, unfortunately, already susceptible to infection due to weakened immune systems.
 ## Files used
